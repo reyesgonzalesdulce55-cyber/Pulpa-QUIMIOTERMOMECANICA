@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Contacto | Pulpa CTMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="menu-navegacion">
+    <div class="logo-menu">Pulpa CTMP</div>
+    <ul class="menu-links">
+        <li><a href="bienvenida.html">Inicio</a></li>
+        <li><a href="proceso.html">Proceso</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+        <li><a href="costos.html">Costos</a></li>
+        <li><a href="distribucion.html">Distribucion</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+    <div class="menu-hamburguesa" id="hamburguesa">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<section class="hero-contacto">
+    <h1>Contacto</h1>
+    <p>Ponte en contacto con nuestro equipo de especialistas</p>
+</section>
+
+<div class="contenedor-contacto">
+    <div class="info-grid">
+        <div class="tarjeta-info"><h3>Telefono</h3><p>+52 55 6907 4876 </p><p>+52 55 4066 9258 </p><p>Lun-Vie: 8am a 8pm</p></div>
+        <div class="tarjeta-info"><h3>Email</h3><p>ventas@pulpactmp.com</p><p>soporte@pulpactmp.com</p><p>info@pulpactmp.com</p></div>
+        <div class="tarjeta-info"><h3>Direccion</h3><p>Av. Industria Nopalera</p><p>Colonia Industrial</p><p>Ciudad de Mexico, Mexico</p></div>
+    </div>
+
+    <div class="formulario-section">
+        <h2>Escribenos</h2>
+        <p class="subtitulo-form">Completa el formulario y te responderemos a la brevedad</p>
+        <form action="#" method="post">
+            <div class="form-grupo"><label>Nombre completo</label><input type="text" placeholder="Tu nombre" required></div>
+            <div class="form-grupo"><label>Correo electronico</label><input type="email" placeholder="correo@ejemplo.com" required></div>
+            <div class="form-grupo"><label>Telefono</label><input type="tel" placeholder="Tu numero de contacto"></div>
+            <div class="form-grupo"><label>Asunto</label><select><option>Cotizacion</option><option>Informacion tecnica</option><option>Quejas o sugerencias</option><option>Otro</option></select></div>
+            <div class="form-grupo"><label>Mensaje</label><textarea placeholder="Escribe tu mensaje aqui..."></textarea></div>
+            <button type="submit" class="boton-enviar">Enviar mensaje</button>
+        </form>
+    </div>
+
+    <div class="mapa-section"><h2>Ubicacion</h2><div class="mapa-falso"><p>Av. Industria Papelera 123, Ciudad de Mexico</p><p>Referencia: A una cuadra del Museo del Papel</p></div></div>
+</div>
+
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        <div class="col-footer"><h3>Contacto</h3><p>Telefono: +52 55 6907 4876</p><p>Email: info@pulpactmp.com</p><p>Direccion: Mexico</p></div>
+        <div class="col-footer"><h3>Redes Sociales</h3><p>Tik tok: tiktok.com/@pulepjb </p><p>Canal: https://whatsapp.com/channel/0029VbCO4f36hENmioYZHB0i </p><p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw== esto era del ig verdad ??</p></div>
+        <div class="col-footer"><h3>Legal</h3><p>2025 Pulpa CTMP</p><p>Todos los derechos reservados</p></div>
+    </div>
+</footer>
+
+<script>
+const hamburguesa = document.getElementById('hamburguesa');
+const menuLinks = document.querySelector('.menu-links');
+if(hamburguesa){ hamburguesa.addEventListener('click', () => { menuLinks.classList.toggle('mostrar'); }); }
+</script>
+
+</body>
+</html>

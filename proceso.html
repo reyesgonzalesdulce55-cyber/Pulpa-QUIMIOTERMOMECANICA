@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Proceso CTMP | Pulpa CTMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="menu-navegacion">
+    <div class="logo-menu">Pulpa CTMP</div>
+    <ul class="menu-links">
+        <li><a href="bienvenida.html">Inicio</a></li>
+        <li><a href="proceso.html" class="activo">Proceso</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="costos.html">Costos</a></li>
+        <li><a href="distribucion.html">Distribucion</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+    <div class="menu-hamburguesa" id="hamburguesa">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<section class="hero-proceso">
+    <h1>Proceso CTMP</h1>
+    <p>Conoce paso a paso como se obtiene la pulpa quimio-termomecanica</p>
+</section>
+
+<div class="contenedor-proceso">
+    <div class="paso">
+        <div class="numero-paso">1</div>
+        <div class="info-paso">
+            <h2>Preparacion de la madera</h2>
+            <p>La madera de especies como pino, abedul o eucalipto se descortiza y se reduce a astillas de tamaño uniforme.</p>
+            <ul><li>Seleccion de especies maderables</li><li>Descortezado y astillado</li><li>Clasificacion por tamano</li></ul>
+        </div>
+    </div>
+
+    <div class="paso">
+        <div class="numero-paso">2</div>
+        <div class="info-paso">
+            <h2>Pretratamiento quimico</h2>
+            <p>Las astillas se impregnan con una solucion quimica (generalmente sulfito de sodio o hidroxido de sodio).</p>
+            <ul><li>Impregnacion con reactivos quimicos</li><li>Temperatura controlada</li><li>Tiempo de reaccion optimo</li></ul>
+        </div>
+    </div>
+
+    <div class="paso">
+        <div class="numero-paso">3</div>
+        <div class="info-paso">
+            <h2>Tratamiento termico a presion</h2>
+            <p>Las astillas quimicamente tratadas se someten a altas temperaturas (120-170°C) y presion en reactores especiales.</p>
+            <ul><li>Reactores a presion</li><li>Temperatura: 120-170°C</li><li>Duracion: 10-30 minutos</li></ul>
+        </div>
+    </div>
+
+    <div class="paso">
+        <div class="numero-paso">4</div>
+        <div class="info-paso">
+            <h2>Refinacion mecanica</h2>
+            <p>El material tratado pasa por refinadores de discos que separan las fibras mediante accion mecanica.</p>
+            <ul><li>Refinadores de doble disco</li><li>Separacion controlada de fibras</li><li>Obtencion de pulpa cruda</li></ul>
+        </div>
+    </div>
+
+    <div class="paso">
+        <div class="numero-paso">5</div>
+        <div class="info-paso">
+            <h2>Lavado y blanqueo</h2>
+            <p>La pulpa obtenida se lava para eliminar residuos quimicos.</p>
+            <ul><li>Lavado con agua y filtrado</li><li>Blanqueo opcional</li><li>Control de calidad</li></ul>
+        </div>
+    </div>
+</div>
+
+<div class="contenedor-proceso">
+    <div class="seccion-tabla">
+        <h2>Comparativa de procesos</h2>
+        <table class="tabla-proceso">
+            <thead><tr><th>Caracteristica</th><th>CTMP</th><th>Pulpa mecanica</th><th>Pulpa quimica</th></tr></thead>
+            <tbody>
+                <tr><td>Rendimiento</td><td>Alto (85-90%)</td><td>Muy alto (95%)</td><td>Bajo (45-50%)</td></tr>
+                <tr><td>Consumo de energia</td><td>Moderado</td><td>Alto</td><td>Bajo</td></tr>
+                <tr><td>Resistencia de fibras</td><td>Buena</td><td>Baja</td><td>Excelente</td></tr>
+                <tr><td>Costo de produccion</td><td>Medio</td><td>Bajo</td><td>Alto</td></tr>
+                <tr><td>Impacto ambiental</td><td>Moderado</td><td>Bajo</td><td>Alto (quimicos)</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        <div class="col-footer"><h3>Contacto</h3><p>Telefono: +52 1 55 3460 4309</p><p>Email: info@pulpactmp.com</p><p>Direccion: Mexico</p></div>
+        <div class="col-footer"><h3>Redes Sociales</h3><p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw=</p><p>Canal: https://whatsapp.com/channel/0029VbCO4f36hENmioYZHB0i</p><p>Tik tok:tiktok.com/@pulepjb</p></div>
+        <div class="col-footer"><h3>Legal</h3><p>2025 Pulpa CTMP</p><p>Todos los derechos reservados</p></div>
+    </div>
+</footer>
+
+<script>
+const hamburguesa = document.getElementById('hamburguesa');
+const menuLinks = document.querySelector('.menu-links');
+if(hamburguesa){
+    hamburguesa.addEventListener('click', () => {
+        menuLinks.classList.toggle('mostrar');
+    });
+}
+</script>
+
+</body>
+</html>

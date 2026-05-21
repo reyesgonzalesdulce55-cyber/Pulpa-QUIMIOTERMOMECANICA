@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Pulpa Quimio-Termomecánica | CTMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<audio id="sonido" autoplay>
+    <source src="audio/entrada.mp3" type="audio/mpeg">
+</audio>
+
+<div class="contenedor-portada">
+    <img src="img/logo.jpg.jpeg" class="logo-portada" alt="Logo Pulpa CTMP">
+    <h1 class="titulo-portada">Pulpa Quimio-Termomecanica</h1>
+    <a href="registro.html" class="boton-portada" onclick="reproducir()">Comenzar</a>
+</div>
+
+<script>
+function reproducir(){
+    let audio = document.getElementById("sonido");
+    audio.play().catch(e => console.log("Error al reproducir:", e));
+}
+window.onload = () => {
+    let audio = document.getElementById("sonido");
+    audio.play().catch(() => console.log("El navegador bloqueo el autoplay"));
+};
+</script>
+
+</body>
+</html>

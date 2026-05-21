@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Bienvenido | Pulpa CTMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="mensaje">
+    Registro completado - Bienvenido
+</div>
+
+<nav class="menu-navegacion">
+    <div class="logo-menu">Pulpa CTMP</div>
+    <ul class="menu-links">
+        <li><a href="bienvenida.html" class="activo">Inicio</a></li>
+        <li><a href="proceso.html">Proceso</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="costos.html">Costos</a></li>
+        <li><a href="distribucion.html">Distribucion</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+    <div class="menu-hamburguesa" id="hamburguesa">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<div class="contenedor-central">
+    <div class="titulo">
+        Pulpa Quimio-Termomecanica
+    </div>
+
+    <div class="contenido">
+        <div class="card">
+            <div class="slider">
+                <img src="img/pulpa1jpg.webp" class="activa" alt="Pulpa CTMP 1">
+                <img src="img/imagen2jpg.jpg" alt="Pulpa CTMP 2">
+                <img src="img/imagen3jpg.jpg" alt="Pulpa CTMP 3">
+            </div>
+        </div>
+
+        <div class="card texto">
+            <h2>Que es?</h2>
+            <p>La pulpa quimio-termomecanica (CTMP) es un tipo de pulpa de madera que combina procesos quimicos, calor y accion mecanica para separar las fibras.</p>
+
+            <h2>Caracteristicas</h2>
+            <p>Tiene buena resistencia, conserva el volumen de las fibras y es mas economica. Puede blanquearse segun su uso.</p>
+
+            <h2>Ventajas</h2>
+            <ul>
+                <li>Mayor aprovechamiento</li>
+                <li>Menor desperdicio</li>
+                <li>Mas economica</li>
+                <li>Buena calidad</li>
+            </ul>
+
+            <h2>Usos</h2>
+            <p>Se utiliza en papel, carton, empaques y productos donde se busca resistencia y bajo costo.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        <div class="col-footer">
+            <h3>Contacto</h3>
+            <p>Telefono: +52 55 6907 4876</p>
+            <p>Email: info@pulpactmp.com</p>
+            <p>Direccion: Mexico</p>
+        </div>
+        <div class="col-footer">
+            <h3>Redes Sociales</h3>
+            <p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw=</p>
+            <p>Canal: https://whatsapp.com/channel/0029VbCO4f36hENmioYZHB0i</p>
+            <p>Tik tok:tiktok.com/@pulepjb</p>
+        </div>
+        <div class="col-footer">
+            <h3>Legal</h3>
+            <p>2025 Pulpa CTMP</p>
+            <p>Todos los derechos reservados</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+let index = 0;
+const imagenes = document.querySelectorAll(".slider img");
+if(imagenes.length){
+    setInterval(() => {
+        imagenes[index].classList.remove("activa");
+        index = (index + 1) % imagenes.length;
+        imagenes[index].classList.add("activa");
+    }, 3000);
+}
+
+const hamburguesa = document.getElementById('hamburguesa');
+const menuLinks = document.querySelector('.menu-links');
+if(hamburguesa){
+    hamburguesa.addEventListener('click', () => {
+        menuLinks.classList.toggle('mostrar');
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Costos CTMP | Pulpa CTMP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#d7f5dc,#f3fff5);
+    color:#1d1d1d;
+}
+
+/* MENU */
+
+.menu-navegacion{
+    width:100%;
+    background:#2d8f45;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    box-sizing:border-box;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-menu{
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+
+.menu-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.menu-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu-links a:hover,
+.menu-links .activo{
+    color:#d7ffdf;
+}
+
+.menu-hamburguesa{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+
+.menu-hamburguesa span{
+    width:28px;
+    height:4px;
+    background:white;
+    margin:3px 0;
+    border-radius:5px;
+}
+
+/* CONTENIDO */
+
+#principal{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.titulo-costos{
+    font-size:55px;
+    color:#20793b;
+    margin-bottom:50px;
+    font-weight:800;
+}
+
+.contenedor-costos{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.caja-costos{
+    background:white;
+    width:320px;
+    padding:35px;
+    border-radius:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    cursor:pointer;
+    transition:.4s;
+}
+
+.caja-costos:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.titulo-costo{
+    font-size:30px;
+    font-weight:700;
+    color:#2d8f45;
+    margin-bottom:25px;
+}
+
+.precio-mxn{
+    font-size:35px;
+    font-weight:800;
+    color:#1f1f1f;
+    margin-bottom:10px;
+}
+
+.precio-eur{
+    font-size:28px;
+    font-weight:700;
+    color:#4d4d4d;
+}
+
+.info-costos{
+    margin-top:60px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    width:80%;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+}
+
+.info-costos .titulo{
+    font-size:35px;
+    color:#20793b;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.info-costos p{
+    font-size:22px;
+    line-height:1.8;
+}
+
+/* VISTA IMAGEN */
+
+#imagenVista{
+    display:none;
+    text-align:center;
+    padding:40px;
+}
+
+#tituloImg{
+    font-size:45px;
+    color:#20793b;
+    margin-bottom:30px;
+}
+
+#imgMostrada{
+    width:80%;
+    max-width:700px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+    transition:.4s;
+    cursor:pointer;
+}
+
+#imgMostrada.zoom{
+    transform:scale(1.2);
+}
+
+.boton-regresar{
+    margin:40px auto;
+    background:#2d8f45;
+    color:white;
+    width:220px;
+    padding:15px;
+    border-radius:50px;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.boton-regresar:hover{
+    background:#20793b;
+}
+
+/* FLECHA */
+
+.flecha-flotante{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#2d8f45;
+    color:white;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.flecha-flotante:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+
+.pie-pagina{
+    margin-top:80px;
+    background:#1d5f2e;
+    color:white;
+    padding:50px 20px;
+}
+
+.contenedor-footer{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.col-footer{
+    max-width:250px;
+}
+
+.col-footer h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.col-footer p{
+    line-height:1.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .menu-links{
+        position:absolute;
+        top:80px;
+        right:0;
+        background:#2d8f45;
+        width:220px;
+        flex-direction:column;
+        padding:20px;
+        display:none;
+    }
+
+    .menu-links.mostrar{
+        display:flex;
+    }
+
+    .menu-hamburguesa{
+        display:flex;
+    }
+
+    .titulo-costos{
+        font-size:42px;
+    }
+
+    .info-costos{
+        width:95%;
+    }
+
+    #imgMostrada{
+        width:95%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="menu-navegacion">
+
+    <div class="logo-menu">Pulpa CTMP</div>
+
+    <ul class="menu-links">
+        <li><a href="bienvenida.html">Inicio</a></li>
+        <li><a href="proceso.html">Proceso</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="costos.html" class="activo">Costos</a></li>
+        <li><a href="distribucion.html">Distribucion</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+
+    <div class="menu-hamburguesa" id="hamburguesa">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</nav>
+
+<div id="principal">
+
+    <h1 class="titulo-costos">Costos CTMP</h1>
+
+    <div class="contenedor-costos">
+
+        <div class="caja-costos" onclick="verImagen(0)">
+            <div class="titulo-costo">1 Tonelada</div>
+            <div class="precio-mxn" id="mxn1">$0</div>
+            <div class="precio-eur" id="eur1">€0</div>
+        </div>
+
+        <div class="caja-costos" onclick="verImagen(1)">
+            <div class="titulo-costo">28 Toneladas</div>
+            <div class="precio-mxn" id="mxn2">$0</div>
+            <div class="precio-eur" id="eur2">€0</div>
+        </div>
+
+    </div>
+
+    <div class="info-costos">
+
+        <div class="titulo">Detalle de costos</div>
+
+        <p>
+            1 tonelada:<br>
+            <b id="info1">$0</b><br>
+            <b id="info1e">€0</b>
+        </p>
+
+        <p>
+            28 toneladas (contenedor completo):<br>
+            <b id="info2">$0</b><br>
+            <b id="info2e">€0</b>
+        </p>
+
+    </div>
+
+</div>
+
+<div id="imagenVista">
+
+    <h1 id="tituloImg"></h1>
+
+    <img id="imgMostrada" src="" onclick="zoomImagen()">
+
+    <div class="boton-regresar" onclick="volver()">
+        Regresar
+    </div>
+
+</div>
+
+<div class="flecha-flotante" onclick="irDistribucion()">
+    →
+</div>
+
+<footer class="pie-pagina">
+
+    <div class="contenedor-footer">
+
+        <div class="col-footer">
+            <h3>Contacto</h3>
+            <p>Telefono: +52 1 55 3460 4309</p>
+            <p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw=</p>
+            <p>Direccion: Mexico</p>
+        </div>
+
+        <div class="col-footer">
+            <h3>Redes Sociales</h3>
+            <p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw=</p>
+            <p>Canal: https://whatsapp.com/channel/0029VbCO4f36hENmioYZHB0i</p>
+            <p>Tik tok:tiktok.com/@pulepjb</p>
+        </div>
+
+        <div class="col-footer">
+            <h3>Legal</h3>
+            <p>2025 Pulpa CTMP</p>
+            <p>Todos los derechos reservados</p>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+let valores = {
+
+    mxn1:136725.30,
+    eur1:6761.90,
+
+    mxn2:765805.93,
+    eur2:37873.69
+};
+
+function animar(id, valor, simbolo){
+
+    let i = 0;
+    let incremento = valor / 100;
+
+    let intervalo = setInterval(()=>{
+
+        i += incremento;
+
+        if(i >= valor){
+            i = valor;
+            clearInterval(intervalo);
+        }
+
+        document.getElementById(id).innerHTML =
+            simbolo + i.toLocaleString("es-MX",{
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
+            });
+
+    },20);
+}
+
+window.onload = ()=>{
+
+    animar("mxn1", valores.mxn1, "$");
+    animar("eur1", valores.eur1, "€");
+
+    animar("mxn2", valores.mxn2, "$");
+    animar("eur2", valores.eur2, "€");
+
+    animar("info1", valores.mxn1, "$");
+    animar("info1e", valores.eur1, "€");
+
+    animar("info2", valores.mxn2, "$");
+    animar("info2e", valores.eur2, "€");
+};
+
+let datos = [
+
+    {
+        titulo:"1 Tonelada de Pulpa",
+        img:"img/tonelada.jpg"
+    },
+
+    {
+        titulo:"28 Toneladas de Pulpa",
+        img:"img/contenedor.jpg"
+    }
+];
+
+function verImagen(num){
+
+    document.getElementById("principal").style.display="none";
+    document.getElementById("imagenVista").style.display="block";
+
+    document.getElementById("tituloImg").innerHTML =
+        datos[num].titulo;
+
+    document.getElementById("imgMostrada").src =
+        datos[num].img;
+}
+
+function zoomImagen(){
+
+    document.getElementById("imgMostrada")
+    .classList.toggle("zoom");
+}
+
+function volver(){
+
+    document.getElementById("imagenVista").style.display="none";
+    document.getElementById("principal").style.display="block";
+}
+
+function irDistribucion(){
+
+    window.location.href = "distribucion.html";
+}
+
+const hamburguesa =
+document.getElementById('hamburguesa');
+
+const menuLinks =
+document.querySelector('.menu-links');
+
+if(hamburguesa){
+
+    hamburguesa.addEventListener('click', ()=>{
+
+        menuLinks.classList.toggle('mostrar');
+    });
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Distribución de Costos | Pulpa CTMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="menu-navegacion">
+    <div class="logo-menu">Pulpa CTMP</div>
+    <ul class="menu-links">
+        <li><a href="bienvenida.html">Inicio</a></li>
+        <li><a href="proceso.html">Proceso</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="costos.html">Costos</a></li>
+        <li><a href="distribucion.html" class="activo">Distribucion</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+    </ul>
+    <div class="menu-hamburguesa" id="hamburguesa">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<h1 class="titulo-distribucion">Distribucion de Costos de Produccion</h1>
+
+<div class="grafica-circular">
+    <div class="centro-grafica" id="total">0%</div>
+</div>
+
+<div class="leyenda-distribucion">
+    <div class="item-leyenda azul">■ Quimicos – <span id="q">0%</span></div>
+    <div class="item-leyenda verde">■ Energia – <span id="e">0%</span></div>
+    <div class="item-leyenda naranja">■ Mantenimientos y otros – <span id="t">0%</span></div>
+    <div class="item-leyenda rosa">■ Produccion – <span id="p">0%</span></div>
+</div>
+
+<div class="flecha-flotante" onclick="regresar()">←</div>
+
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        <div class="col-footer"><h3>Contacto</h3><p>Telefono: +52 1 55 3460 4309</p><p>Email: info@pulpactmp.com</p><p>Direccion: Mexico</p></div>
+        <div class="col-footer"><h3>Redes Sociales</h3><p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw=</p><p>Canal: https://whatsapp.com/channel/0029VbCO4f36hENmioYZHB0i</p><p>Tik tok:tiktok.com/@pulepjb</p></div>
+        <div class="col-footer"><h3>Legal</h3><p>2025 Pulpa CTMP</p><p>Todos los derechos reservados</p></div>
+    </div>
+</footer>
+
+<script>
+let valores = { q:25, e:35, t:20, p:20 };
+function animar(id, valor){
+    let i = 0;
+    let intervalo = setInterval(()=>{
+        if(i >= valor){ clearInterval(intervalo); }
+        else { i++; document.getElementById(id).innerText = i + "%"; }
+    },30);
+}
+animar("q", valores.q); animar("e", valores.e); animar("t", valores.t); animar("p", valores.p);
+let total = 0;
+let intervaloTotal = setInterval(()=>{
+    if(total >= 100){ clearInterval(intervaloTotal); }
+    else { total++; document.getElementById("total").innerText = total + "%"; }
+},20);
+function regresar(){ window.location.href = "costos.html"; }
+
+const hamburguesa = document.getElementById('hamburguesa');
+const menuLinks = document.querySelector('.menu-links');
+if(hamburguesa){ hamburguesa.addEventListener('click', () => { menuLinks.classList.toggle('mostrar'); }); }
+</script>
+
+</body>
+</html>

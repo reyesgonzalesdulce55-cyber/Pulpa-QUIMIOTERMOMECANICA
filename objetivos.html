@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Objetivos CTMP | Pulpa CTMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="menu-navegacion">
+    <div class="logo-menu">Pulpa CTMP</div>
+    <ul class="menu-links">
+        <li><a href="bienvenida.html">Inicio</a></li>
+        <li><a href="proceso.html">Proceso</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="costos.html">Costos</a></li>
+        <li><a href="distribucion.html">Distribucion</a></li>
+        <li><a href="objetivos.html" class="activo">Objetivos</a></li>
+    </ul>
+    <div class="menu-hamburguesa" id="hamburguesa">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<h1 class="titulo-objetivos">Objetivos Quimicos y Mecanicos</h1>
+
+<div class="contenedor-objetivos">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="img/pastas.jpg" alt="Pasta Mecanica">
+                <h2>Pasta Mecanica</h2>
+                <p>Se obtiene por procesos fisicos, conservando la mayor parte de la madera. Tiene alto rendimiento pero menor resistencia.</p>
+            </div>
+            <div class="flip-card-back">
+                <h2>Pasta Quimica</h2>
+                <p>Usa quimicos para eliminar lignina, logrando fibras mas limpias, resistentes y de mejor calidad.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="texto">
+        <div class="caja-objetivos">
+            <b>Objetivo Quimico:</b>
+            La CTMP utiliza quimicos como sulfito de sodio (Na₂SO₃) y NaOH para ablandar la lignina, facilitando la separacion de fibras.
+            <ul>
+                <li>Reduce consumo de energia</li>
+                <li>Mejora flexibilidad</li>
+                <li>Aumenta resistencia</li>
+                <li>Alto rendimiento</li>
+            </ul>
+        </div>
+
+        <div class="caja-objetivos">
+            <b>Objetivo Mecanico:</b>
+            Busca separar fibras con presion y calor sin dañarlas.
+            <ul>
+                <li>Alto rendimiento</li>
+                <li>Conserva fibras</li>
+                <li>Mejora calidad</li>
+                <li>Optimiza proceso</li>
+            </ul>
+        </div>
+
+        <div class="caja-objetivos">
+            <b>Importancia:</b>
+            Combina procesos quimicos y mecanicos logrando equilibrio entre calidad y costo.
+        </div>
+    </div>
+</div>
+
+<div class="flecha-flotante" onclick="siguiente()">→</div>
+
+<footer class="pie-pagina">
+    <div class="contenedor-footer">
+        <div class="col-footer">
+            <h3>Contacto</h3>
+            <p>Telefono: +52 55 4066 9258</p>
+            <p>Email: info@pulpactmp.com</p>
+            <p>Direccion: Mexico</p>
+        </div>
+        <div class="col-footer">
+            <h3>Redes Sociales</h3>
+            <p>Instagram: https://www.instagram.com/pulep.jb?igsh=MXJheGs0Z3NieTB6dw=</p>
+            <p>Canal: https://whatsapp.com/channel/0029VbCO4f36hENmioYZHB0i</p>
+            <p>Tik tok:tiktok.com/@pulepjb</p>
+        </div>
+        <div class="col-footer">
+            <h3>Legal</h3>
+            <p>2025 Pulpa CTMP</p>
+            <p>Todos los derechos reservados</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function siguiente(){
+    window.location.href = "costos.html";
+}
+const hamburguesa = document.getElementById('hamburguesa');
+const menuLinks = document.querySelector('.menu-links');
+if(hamburguesa){
+    hamburguesa.addEventListener('click', () => {
+        menuLinks.classList.toggle('mostrar');
+    });
+}
+</script>
+
+</body>
+</html>
